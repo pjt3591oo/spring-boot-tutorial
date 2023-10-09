@@ -4,6 +4,7 @@ import com.mung.blog.aop.Performance
 import com.mung.blog.entity.Comment
 import com.mung.blog.entity.Post
 import com.mung.blog.service.PostService
+import org.springframework.security.core.Authentication
 import org.springframework.web.bind.annotation.*
 import java.util.*
 

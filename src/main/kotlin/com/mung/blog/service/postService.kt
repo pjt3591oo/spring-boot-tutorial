@@ -17,12 +17,7 @@ import java.util.*
 class PostService (val postRepository: PostRepository, val commentRepository: CommentRepository) {
 
     fun testSelect(): Boolean {
-//        val id: Long = 4
         val post = postRepository.findAllWithCommentsUsingFetchJoin()
-//        val post = postRepository.findById(id).orElse(null)
-
-        println(post)
-        println(post[0].comments)
         return true
     }
 

@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.http.MediaType
 import org.springframework.test.context.ActiveProfiles
@@ -22,7 +23,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPat
 
 
 @ActiveProfiles("dev")
-@AutoConfigureMockMvc
 @WebMvcTest(BlogController::class)
 @ExtendWith(MockitoExtension::class)
 class BlogControllerTests {
@@ -46,7 +46,6 @@ class BlogControllerTests {
             .andExpect(jsonPath("$[1].body").value("222")) // 두 번째 항목의 body 검사
             .andDo(MockMvcResultHandlers.print())
     }
-
 
     @Test
     @DisplayName("400")

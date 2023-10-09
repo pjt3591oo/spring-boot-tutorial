@@ -14,7 +14,8 @@ class BlogService (val postRepository: PostRepository){
     }
 
     fun readAllPost(): List<Post> {
-        return postRepository.findAll()
+        val posts = postRepository.findAll()
+        return posts
     }
 
     fun createPost(title: String, body: String): Boolean {

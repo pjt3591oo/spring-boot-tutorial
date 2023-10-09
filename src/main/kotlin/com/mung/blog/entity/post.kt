@@ -1,5 +1,6 @@
 package com.mung.blog.entity
 
+import com.fasterxml.jackson.annotation.JsonBackReference
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
 import org.springframework.data.annotation.CreatedDate
@@ -20,7 +21,7 @@ class Post(
 
     var body: String,
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
     var comments: MutableList<Comment> = mutableListOf(),
 
     var createdAt: LocalDateTime  = LocalDateTime.now(),

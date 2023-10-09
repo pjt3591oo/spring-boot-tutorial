@@ -25,8 +25,6 @@ class BlogController (val blogService: BlogService) {
 
     @GetMapping("/{idx}")
     fun readOnePost(@PathVariable("idx") idx:Long, @RequestParam("page", required = false, defaultValue = 0.toString()) page: Int): Post {
-        println(a)
-        println(b)
         return blogService.readOnePost(idx)
     }
 

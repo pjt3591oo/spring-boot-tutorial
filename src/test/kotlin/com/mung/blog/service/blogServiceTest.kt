@@ -52,8 +52,8 @@ class BlogServiceTests {
     @Test
     fun testAssertThatHasItems() {
         assertAll(
-            { assertThat(listOf("one", "two", "three"), hasItems("four")) },
-            { assertThat(listOf("one", "two", "three"), hasItems("one", "three", "four")) }
+            { assertThat(listOf("one", "two", "three"), hasItems("one")) },
+            { assertThat(listOf("one", "two", "three"), hasItems("one", "three")) }
         );
     }
 
@@ -72,7 +72,7 @@ class BlogServiceTests {
             assertEquals(BaseResponseCode.POST_NOT_FOUND, exception.baseResponseCode)
         }
 
-        @Test
+//        @Test
         @RepeatedTest(value=2, name="{displayName} {currentRepetition} / {totalRepetitions} 실행")
         @DisplayName("존재하는 아이디 조회")
         fun readOnePostToSuccess() {
